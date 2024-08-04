@@ -1,0 +1,54 @@
+.homeContainer{
+    max-width:60vw;
+    margin:auto;
+}
+
+.inputContent input{
+    width:35vw;
+    min-width:250px;
+    padding:5px 15px;
+}
+
+.contentFlex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mapContent{
+    width:35vw;
+    height:30vw;
+}
+
+.gptContent{
+    width:23vw;
+    max-height: 30vw;
+    overflow-y: auto;
+    border:1px solid #ccc;
+}
+
+.gptContent ul{
+    list-style: circle;
+}
+
+.gptContent li{
+    padding:10px;
+}
+
+.infoContainer{
+    color: black;
+}
+
+.infoContainer ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 10px;
+}
+
+.infoContainer li{
+    flex: 0 0 33%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding-left: 10px;
+    border-radius: 10px;
+}
