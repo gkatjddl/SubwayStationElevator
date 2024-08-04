@@ -7,6 +7,8 @@
     width:35vw;
     min-width:250px;
     padding:5px 15px;
+    border: 2px solid rgb(118, 118, 118);
+    border-right:none;
 }
 
 .contentFlex{
@@ -24,6 +26,7 @@
     max-height: 30vw;
     overflow-y: auto;
     border:1px solid #ccc;
+    border-radius: 15px;
 }
 
 .gptContent ul{
@@ -48,7 +51,27 @@
 .infoContainer li{
     flex: 0 0 33%;
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid rgb(118, 118, 118);
     padding-left: 10px;
     border-radius: 10px;
+}
+
+.gptButton{
+    position: absolute;
+    top: 86px;
+    padding:2.5px 20px;
+    background: white;
+    font-size: 15px;
+    border: 2px solid rgb(118, 118, 118);
+    border-left: none;
+}
+
+.gptButton:hover{
+    background: rgb(50, 50, 50);
+    cursor: pointer;
+    color: white;
+}
+
+.gptInput:focus{
+    outline: none;
 }

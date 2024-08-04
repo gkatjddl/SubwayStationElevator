@@ -5,7 +5,15 @@
     color: red;
 }
 .txt, .txt-1 {
-    
-    white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 합니다 */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 8px;
+    justify-content: center;
+    font-size: 12px;
+}
 
+.Map-all{
+    border: 2px solid black;
 }

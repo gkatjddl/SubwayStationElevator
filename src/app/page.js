@@ -32,7 +32,7 @@ export default function Home() {
 
         result.forEach(item => {
           station_number.forEach(station => {
-            if (station.lat === item.latitude && station.lon === item.longitude) {
+            if (station.lat === item.latitude && station.lon === item.longitude){
               item.information = `${item.information} ${station.num}`;
             }
           });
@@ -85,7 +85,7 @@ export default function Home() {
     let system_json = JSON.stringify(data)
     
     // input과 data.information을 이용해서 곂치는 부분만 새로운 state에 담는다(지도표시)
-    const filtered = data.filter(item => compareWords(gptInput, item.information));
+    const filtered = data?.filter(item => compareWords(gptInput, item.information));
     setFilteredData(filtered);
 
     try{
@@ -115,13 +115,13 @@ export default function Home() {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.inputContent}>
-      <h2>서울 지하철역 엘리베이터 위치 안내</h2>
+      <h1>서울 지하철역 엘리베이터 위치 안내</h1>
         <form onSubmit={hGptSubmit}>
           <label htmlFor="station-input">▶</label>
           <input type="text" id="station-input" 
           placeholder="지하철역을 입력하세요"
-          onChange={(e)=>setGptInput(e.target.value)} value={gptInput}/>
-            <button type="submit" className={styles.gptButton}>검색</button>
+          onChange={(e)=>setGptInput(e.target.value)} value={gptInput} className={styles.gptInput}/>
+            <button type="submit" className={styles.gptButton}>검색🔍</button>
         </form>
         {data ? <p>{data.message}</p> : <p>Loading...</p>}
       </div>
@@ -130,6 +130,7 @@ export default function Home() {
           <KakaoMap data={filteredData}/>
         </div>
         <div className={styles.gptContent}>
+
           <ul>
             {
               answer && answer.map(

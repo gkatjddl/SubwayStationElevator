@@ -45,32 +45,19 @@ export default function KakaoMap(props){
         }
     }, [props.searchResult]);
     return(
-        <div style={{width:'100%', height:'100%'}}>
+        <div style={{width:'100%', height:'100%'}} className="Map-all">
             <Script src={KAKAO_SDK_URL} strategy="beforeInteractive" />
             <Map center={center} level={3} style={{width:"100%", height:"100%" }}>
-
                 {
                     locations.map((location, index)=>{
                         return(
                                 <MapMarker position={{lat: location.lat,lng: location.lng }} key={index} >
-                                    <div className={location.subway_name ? 'txt' : 'txt-1'} >{location.name}
-
-</div>
-                                    
-
-
+                                    <div className={location.subway_name ? 'txt' : 'txt-1'} >{location.name}</div>
                                 </MapMarker>
-
-                                
                         )
-                            
-
-                        
                     }
                     )
                 }
-
-               
             </Map>
         </div>
     )
