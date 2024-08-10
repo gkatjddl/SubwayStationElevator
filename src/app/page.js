@@ -33,7 +33,7 @@ export default function Home() {
         result.forEach(item => {
           station_number.forEach(station => {
             if (station.lat === item.latitude && station.lon === item.longitude){
-              item.information = `${item.information} ${station.num}`;
+              item.target = `${station.num}`;
             }
           });
         });
@@ -156,12 +156,13 @@ export default function Home() {
                   <p>지역명: {item.city_name}</p>
                   <p>지하철역: {item.subway_name}</p>
                   <p>정보: {item.information}</p>
+                  <p>엘레베이터 위치: {item.target}</p>
                 </li>
               ))}
             </ul>
           </div>
         ) : (
-          <p>데이터 없음</p>
+          <p>Loading...</p>
         )}
       </div>
     </div>

@@ -9,7 +9,7 @@ export default function KakaoMap(props){
 
     
    const [center, setCenter] = useState({lat: 37.57329704981851, lng: 127.0174491746965})
-    const [locations, setLocations] = useState([{lat: 37.57329704981851, lng: 127.0174491746965, name: '종로구 동묘앞역 3번 출구'}] )
+    const [locations, setLocations] = useState([{lat: 37.57329704981851, lng: 127.0174491746965, name: '종로구 동묘앞역',target:' 3번 출구'}] )
 
     useEffect(()=>{
         if (props.data && props.data.length > 0) {
@@ -17,7 +17,8 @@ export default function KakaoMap(props){
                 lat: item.latitude,
                 lng: item.longitude,
                 name: item.information,
-                subway_name: item.subway_name
+                subway_name: item.subway_name,
+                target:item.target
             }));
              
             setLocations(transformedLocations);
@@ -52,7 +53,10 @@ export default function KakaoMap(props){
                     locations.map((location, index)=>{
                         return(
                                 <MapMarker position={{lat: location.lat,lng: location.lng }} key={index} >
-                                    <div className={location.subway_name ? 'txt' : 'txt-1'} >{location.name}</div>
+                                    <div className={location.subway_name ? 'txt' : 'txt-1'} >
+                                        <p className ="tagP1">{location.name}</p>
+                                        <p className ="tagP2">{location.target}</p>
+                                        </div>
                                 </MapMarker>
                         )
                     }

@@ -33,11 +33,12 @@ export default async function handler(req, res) {
         subway_name: item.SBWY_STN_NM,
         information: item.SGG_NM + " " + item.SBWY_STN_NM + "역 ",
         latitude: latitude, // 위도
-        longitude: longitude // 경도
+        longitude: longitude, // 경도
+        target: ''
       };
     });
 
-    console.log(my_result)
+    //console.log(my_result)
 
     res.status(200).json(my_result); // 클라이언트에게 JSON 응답 전송
   } catch (error) {

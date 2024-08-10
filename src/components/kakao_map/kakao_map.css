@@ -5,15 +5,28 @@
     color: red;
 }
 .txt, .txt-1 {
-    height: 50px;
-    display: flex;
+    height: 52px;
+    width: 150px;
+    display: inline-block;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 8px;
+    padding: 0 0px;
     justify-content: center;
     font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom: 2px;
 }
 
 .Map-all{
     border: 2px solid black;
+}
+
+.tagP1{
+    margin: 0;
+    background: rgb(223, 218, 218);
+}
+
+.tagP2{
+    margin: 0;
 }
